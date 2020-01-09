@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication13</name>
+    </assembly>
+    <members>
+        <member name="M:WebApplication13.Controllers.WeatherForecastController.GetTest">
+            <summary>
+            测试方法
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
