@@ -52,6 +52,26 @@ namespace WebApplication13
                         Url = new Uri("http://www.cnblogs.com/yilezhu/")
                     }
                 });
+                
+                c.SwaggerDoc("v2", new OpenApiInfo
+                {
+                    Title = "测试API",
+                    Version = "v2",
+                    Description = "这是一个swagger测试用例",
+                   
+                    //TermsOfService = "None",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "lc",
+                        Email = string.Empty,
+                        Url = new Uri("http://www.cnblogs.com/yilezhu/")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "许可证名字",
+                        Url = new Uri("http://www.cnblogs.com/yilezhu/")
+                    }
+                });
 
                 // 为 Swagger JSON and UI设置xml文档注释路径
                 var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);//获取应用程序所在目录（绝对，不受工作目录影响，建议采用此方法获取路径）
@@ -78,6 +98,7 @@ namespace WebApplication13
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v2/swagger.json", "My API V2");
             });
 
             app.UseEndpoints(endpoints =>

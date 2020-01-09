@@ -7,6 +7,9 @@ using Microsoft.Extensions.Logging;
 
 namespace WebApplication13.Controllers
 {
+    /// <summary>
+    /// https://www.cnblogs.com/laozhang-is-phi/p/9795689.html
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -23,6 +26,7 @@ namespace WebApplication13.Controllers
             _logger = logger;
         }
 
+        [ApiExplorerSettings(GroupName ="v1")]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -48,7 +52,8 @@ namespace WebApplication13.Controllers
         /// </param>
         /// <returns>用户身份信息</returns>
         /// <response code="201">返回value字符串</response>
-        /// <response code="400">如果id为空</response>  
+        /// <response code="400">如果id为空</response>
+        [ApiExplorerSettings(GroupName = "v2")]
         [HttpGet("test")]
         public IActionResult GetTest(int id)
         {
