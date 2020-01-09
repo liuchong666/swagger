@@ -59,5 +59,39 @@ namespace WebApplication13.Controllers
         {
             return new JsonResult(new{Name="zhangsan"});
         }
+
+        /// <summary>
+        /// 获取用户详情API
+        /// </summary>
+        /// <remarks>
+        /// 例子：
+        /// /WeatherForecast/test
+        /// </remarks>
+        /// <returns>用户身份信息</returns>
+        /// <response code="201">返回value字符串</response>
+        /// <response code="400">如果id为空</response>
+        [ApiExplorerSettings(GroupName = "v2")]
+        [HttpGet("test1")]
+        public IActionResult GetTest()
+        {
+            return new JsonResult(new { Name = "zhangsan" });
+        }
+        
+        /// <summary>
+        /// 获取用户详情API
+        /// </summary>
+        /// <remarks>
+        /// 例子：
+        /// /WeatherForecast/test
+        /// </remarks>
+        /// <returns>用户身份信息</returns>
+        /// <response code="201">返回value字符串</response>
+        /// <response code="400">如果id为空</response>
+        [ApiExplorerSettings(GroupName = "v2")]
+        [HttpGet("test2")]
+        public IActionResult GetTest(int id,string name)
+        {
+            return new JsonResult(new { Name = "zhangsan" });
+        }
     }
 }
